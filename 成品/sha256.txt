@@ -1,0 +1,20 @@
+MultiWallCycle（多屏幻灯壁纸）v2.4 文件校验（SHA256）
+生成时间：2026-11-13（v2.4：本地图片标题 + 必应图入库写 EXIF + 审查报告处置）
+
+[正式版] 成品\MultiWallCycle.exe
+  大小：330240 字节
+  版本：2.4.0.0
+  SHA256：C04B7081D1ED699261245E3F000CEEF9711CD09C3DE8ECBBF8E2602E1D9F6CED
+
+[测试版] _test\MultiWallCycle_Test.exe（带日志，仅供排查，不对外发布）
+  大小：342016 字节
+  版本：2.4.0.0
+  SHA256：858F9C0F1D81706BBA8983326ED6DE3165664B10031D650F3502F2D94B897E05
+
+说明：相比 v2.3（321024 字节），本批只增加 9216 字节，全部是新增的
+  ImageMeta.cs（JPEG 段解析 + EXIF 构造/写入）。图标部分与 v2.3 完全相同，
+  仍是 app.ico 的 7 个尺寸（16/24/32/48/64/128/256），
+  /win32icon 与 /resource 两种方式各存一份。
+
+核对方法（Windows 命令提示符或 PowerShell）：
+  certutil -hashfile MultiWallCycle.exe SHA256

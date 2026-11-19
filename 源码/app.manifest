@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+  v2.1 新增：标准 Win32 应用程序清单。
+  目的：① 明确声明本程序以普通用户权限运行（asInvoker，不申请管理员提权）——
+        未声明时部分杀软会按"可能提权"的启发式规则判可疑；声明后可显著降低这类误报。
+        ② 写明程序名称/描述，供杀软与系统属性展示，避免"无信息可执行文件"被当成可疑样本。
+        ③ 声明支持的 Windows 版本（Win7 ~ Win11），避免兼容性助手误判。
+  注意：这里【不】声明 dpiAware —— Program.cs 已确认 System DPI Aware 会破坏
+        AutoScaleMode.Font 布局（980→560），保持系统默认的 DPI 虚拟化行为。
+-->
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+  <assemblyIdentity
+      version="2.3.0.0"
+      processorArchitecture="msil"
+      name="MultiWallCycle"
+      type="win32" />
+  <description>MultiWallCycle 多屏幻灯壁纸 —— 多显示器独立或跟随轮换壁纸的绿色开源小程序（作者：༺格桑仁青༻ &amp; Old Newbie）</description>
+
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+    <security>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+
+  <compatibility xmlns="urn:schemas-microsoft-com:asm.v3">
+    <application>
+      <!-- Windows 7 -->
+      <supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />
+      <!-- Windows 8 -->
+      <supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />
+      <!-- Windows 8.1 -->
+      <supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />
+      <!-- Windows 10 / 11 -->
+      <supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />
+    </application>
+  </compatibility>
+</assembly>

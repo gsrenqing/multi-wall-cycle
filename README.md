@@ -10,7 +10,7 @@ A Windows desktop wallpaper rotation tool that fills the gaps left by the Micros
 
 ```
 ├─ 源码/            # C# sources and icons
-├─ 成品/            # MultiWallCycle.exe, user guide, changelog, sha256
+├─ 成品/            # MultiWallCycle.exe and sha256
 ├─ build.bat        # One-click build script (release, no log files)
 ├─ LICENSE          # GPL-3.0
 └─ README.md
@@ -41,11 +41,11 @@ Double-click `build.bat`, or invoke the .NET Framework built-in `csc.exe` manual
 
 The output is `成品\MultiWallCycle.exe`. Use the test build's `build-test.bat` (output to `_test\`) when you need logs for troubleshooting.
 
-> If the generated exe disappears immediately, it was most likely blocked by security software (e.g. Huorong). Add the folder to the whitelist and rebuild; see `成品\杀软误报说明.md`.
+> If the generated exe disappears immediately, it was most likely blocked by security software (e.g. Huorong). Add the folder to the whitelist and rebuild.
 
 ## Usage
 
-See `成品\使用说明.md`. Put `MultiWallCycle.exe` in a fixed folder and run it; for each monitor, choose a wallpaper folder and rotation interval, then click "Save and apply".
+Put `MultiWallCycle.exe` in a fixed folder and run it; for each monitor, choose a wallpaper folder and rotation interval, then click "Save and apply".
 
 ## License
 
@@ -61,7 +61,7 @@ This project is open-sourced under **GPL-3.0**; see [LICENSE](LICENSE). For non-
 
 ```
 ├─ 源码/            # C# 源码与图标
-├─ 成品/            # MultiWallCycle.exe、使用说明、变更说明、sha256
+├─ 成品/            # MultiWallCycle.exe、sha256
 ├─ build.bat        # 一键编译脚本（正式版，不写日志）
 ├─ LICENSE          # GPL-3.0
 └─ README.md
@@ -92,11 +92,11 @@ This project is open-sourced under **GPL-3.0**; see [LICENSE](LICENSE). For non-
 
 编译产物为 `成品\MultiWallCycle.exe`。需要日志排查时可参考 v2.5 测试版的 `build-test.bat`（输出到 `_test\`）。
 
-> 若生成的 exe 立刻消失，多为安全软件（如火绒）拦截，请将目录加入白名单后重新编译；详见 `成品\杀软误报说明.md`。
+> 若生成的 exe 立刻消失，多为安全软件（如火绒）拦截，请将目录加入白名单后重新编译。
 
 ## 使用
 
-详见 `成品\使用说明.md`。把 `MultiWallCycle.exe` 放到固定文件夹后双击运行，每块屏分别选择壁纸文件夹与更换间隔，点「保存并应用」。
+把 `MultiWallCycle.exe` 放到固定文件夹后双击运行，每块屏分别选择壁纸文件夹与更换间隔，点「保存并应用」。
 
 ## 许可
 

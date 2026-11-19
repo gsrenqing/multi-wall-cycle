@@ -1,10 +1,61 @@
-# MultiWallCycle（多屏幻灯壁纸）
+# MultiWallCycle (Multi-Monitor Slideshow Wallpaper)
+
+A Windows desktop wallpaper rotation tool that fills the gaps left by the Microsoft Store app Dynamic Theme: **each monitor can use its own wallpaper folder and rotation interval**, built on the native Windows `IDesktopWallpaper` COM interface. It supports automatic Chinese/English switching and a portable green build.
+
+- Version: **v2.4.0.0** (stable, portable / no installer)
+- Runtime: Windows 10 / 11 (.NET Framework 4.x)
+- Stack: C# / WinForms / WPF (PresentationCore, WindowsBase, System.Xaml)
+
+## Repository Layout
+
+```
+├─ 源码/            # C# sources and icons
+├─ 成品/            # MultiWallCycle.exe, user guide, changelog, sha256
+├─ build.bat        # One-click build script (release, no log files)
+├─ LICENSE          # GPL-3.0
+└─ README.md
+```
+
+## Main Modules
+
+| Source file | Responsibility |
+|---|---|
+| `Program.cs` | Entry point |
+| `MainForm.cs` | Main UI (draft-based settings) |
+| `WallpaperEngine.cs` | Wallpaper rotation engine (IDesktopWallpaper) |
+| `Bing.cs` | Bing wallpaper fetching |
+| `Config.cs` | Config read/write (portable config.json supported) |
+| `CaptionSettingsForm.cs` | Caption / settings dialog |
+| `ImageMeta.cs` | Image metadata (Exif) |
+| `Lang.cs` | Chinese/English text table |
+| `AutoStart.cs` / `Uninstall.cs` | Auto-start / uninstall cleanup |
+| `NativeMethods.cs` | Win32 interop |
+
+## Build from Source
+
+Double-click `build.bat`, or invoke the .NET Framework built-in `csc.exe` manually:
+
+```powershell
+.\build.bat
+```
+
+The output is `成品\MultiWallCycle.exe`. Use the test build's `build-test.bat` (output to `_test\`) when you need logs for troubleshooting.
+
+> If the generated exe disappears immediately, it was most likely blocked by security software (e.g. Huorong). Add the folder to the whitelist and rebuild; see `成品\杀软误报说明.md`.
+
+## Usage
+
+See `成品\使用说明.md`. Put `MultiWallCycle.exe` in a fixed folder and run it; for each monitor, choose a wallpaper folder and rotation interval, then click "Save and apply".
+
+## License
+
+This project is open-sourced under **GPL-3.0**; see [LICENSE](LICENSE). For non-commercial study and testing only. The author is not liable for any issues arising from its use and does not commit to future upgrades.
+
+---
+
+# 中文说明
 
 一款 Windows 桌面壁纸定时轮换工具，补足微软商店 Dynamic Theme 的短板：**每个显示器可设置不同壁纸与不同更换间隔**，基于 Windows 原生 `IDesktopWallpaper` COM 接口实现。支持中英文界面自动切换、开机自启与绿色便携配置。
-
-- 当前版本：**v2.4.0.0**（正式版，绿色免安装）
-- 运行环境：Windows 10 / 11（.NET Framework 4.x）
-- 技术栈：C# / WinForms / WPF（PresentationCore、WindowsBase、System.Xaml）
 
 ## 目录结构
 
